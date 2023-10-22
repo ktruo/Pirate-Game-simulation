@@ -258,6 +258,17 @@ class BinarySearchTree(Generic[K, I]):
         if current.left is None:
             return current
         return self.get_minimal(current.left)
+    
+    def get_maximal(self, current: TreeNode) -> TreeNode:
+        """
+            Get a node having the largest key in the current sub-tree.
+        """
+        if current is None:
+            return None
+        if current.right is None:
+            return current
+        return self.get_minimal(current.right)
+    
 
     def is_leaf(self, current: TreeNode) -> bool:
         """ Simple check whether or not the node is a leaf. """
